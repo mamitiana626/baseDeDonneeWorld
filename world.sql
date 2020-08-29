@@ -1,3 +1,10 @@
+--
+-- Base de données :  `world`
+--
+
+--
+-- Structure de la table `personnes`
+--
 DROP TABLE IF EXISTS `personnes`;
 CREATE TABLE IF NOT EXISTS `personnes` (
   `id` INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -8,6 +15,10 @@ CREATE TABLE IF NOT EXISTS `personnes` (
   `poids` float NOT NULL
 );
 
+--
+-- Déchargement des données de la table `personnes`
+--
+
 INSERT INTO `personnes` (`id`, `nom`, `prenom`, `age`, `taille`, `poids`) VALUES
 (1, 'Rakoto', 'Be Nify', 10, 1.5, 70),
 (2, 'Lava', 'Rapeto', 25, 2, 30),
@@ -15,8 +26,16 @@ INSERT INTO `personnes` (`id`, `nom`, `prenom`, `age`, `taille`, `poids`) VALUES
 (4, 'Kiala', 'Manjakely', 100, 1.68, 45.7),
 (5, 'Kiala', 'Pota', 37, 0.8, 50);
 
+--
+-- Ajout champ couleur_preferee dans la  table `personnes`
+--
+
 ALTER TABLE personnes
 ADD couleur_preferee VARCHAR(255);
+
+--
+-- Modification des données de la table `personnes`
+--
 
 UPDATE personnes SET couleur_preferee = 'rouge' WHERE id = 1;
 UPDATE personnes SET couleur_preferee = 'vert' WHERE id = 2;
